@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX RHYTHM - Neural Sync Gaming Optimizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div id="app">
+        <!-- Setup Screen -->
+        <div id="setupScreen" class="screen active">
+            <div class="logo-container">
+                <div class="logo-diamond"></div>
+                <div class="logo-text">
+                    <div class="logo-title">APEX RHYTHM</div>
+                    <div class="logo-subtitle">NEURAL-SYNC V4.0.2</div>
+                </div>
+            </div>
+
+            <div class="identity-card">
+                <h2 class="section-title">IDENTITY VERIFICATION</h2>
+                
+                <div class="form-group">
+                    <label>OPERATOR ALIAS</label>
+                    <input type="text" id="username" placeholder="Enter your alias..." maxlength="20">
+                </div>
+
+                <div class="time-inputs">
+                    <div class="form-group">
+                        <label>WAKEUP</label>
+                        <input type="time" id="wakeTime" value="06:00">
+                    </div>
+                    <div class="form-group">
+                        <label>SLEEP</label>
+                        <input type="time" id="sleepTime" value="22:30">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>COMBAT CLASS (GENRE)</label>
+                    <select id="gameGenre">
+                        <option value="FPS">FPS</option>
+                        <option value="MOBA">MOBA</option>
+                        <option value="Battle Royale">Battle Royale</option>
+                        <option value="Fighting">Fighting</option>
+                        <option value="RTS">RTS</option>
+                        <option value="Racing">Racing</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>ENGAGEMENT INTENSITY</label>
+                    <select id="intensity">
+                        <option value="Casual">Casual</option>
+                        <option value="Competitive">Competitive</option>
+                        <option value="Ranked Grind">Ranked Grind</option>
+                        <option value="Pro Practice">Pro Practice</option>
+                    </select>
+                </div>
+
+                <button id="analyzeBtn" class="primary-btn">
+                    <span>INITIALIZE SYNC</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="header">
+                <div class="user-info">
+                    <span id="displayUsername" class="username-display"></span>
+                    <span class="biometric-tag">BIOMETRIC SYNC</span>
+                </div>
+                <div class="meta-info">
+                    <span>GENRE: <span id="displayGenre"></span></span>
+                    <span>INTENSITY: <span id="displayIntensity"></span></span>
+                    <span class="status-badge">SYNC STATUS: OPTIMIZED</span>
+                </div>
+            </div>
+
+            <div class="peak-window-display">
+                <div class="peak-label">PEAK PERF WINDOW</div>
+                <div id="peakWindow" class="peak-time">08:45 - 10:15</div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="rhythmChart"></canvas>
+                <div class="chart-labels">
+                    <span class="wake-label">WAKE: <span id="chartWake"></span></span>
+                    <div class="chart-title">NEURAL ENGAGEMENT CURVE</div>
+                    <span class="sleep-label">SLEEP: <span id="chartSleep"></span></span>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">EST APM POTENTIAL</div>
+                    <div id="apmScore" class="metric-value">227</div>
+                    <div class="metric-sub">BASED ON GENRE-SPECIFIC SYNERGY</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">METABOLIC FLUSH RATE</div>
+                    <div id="flushRate" class="metric-value">HIGH</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar" id="flushBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="timeSlots" class="time-slots">
+                <!-- Dynamically generated time slots -->
+            </div>
+
+            <div class="action-buttons">
+                <button id="exportBtn" class="primary-btn">
+                    <span>EXPORT PROTOCOL</span>
+                </button>
+                <button id="resetBtn" class="secondary-btn">
+                    <span>NEW SYNC</span>
+                </button>
+            </div>
+
+            <div class="version-tag">APEXRHYTHM BIO-SYNC PROTOCOL V4.0.2</div>
+        </div>
+    </div>
+
+    <!-- Hidden canvas for export -->
+    <canvas id="exportCanvas" style="display: none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
